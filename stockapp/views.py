@@ -1,3 +1,8 @@
 from django.shortcuts import render
+from .forms import StockForm
 
-# Create your views here.
+
+def home(request):
+    form = StockForm
+    context = {'form': form}
+    return render(request, 'home.html', context)
