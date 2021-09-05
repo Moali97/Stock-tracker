@@ -15,9 +15,12 @@ def home(request):
     querystring = {'symbol': 'AAPL'}
     response = requests.get(url, headers=headers, params=querystring).json()
 
-     print(response.text)
 
+    stock_data = {
+        'name' : querystring,
+        'price' : response['price']['regularMarketOpen'],
+    }
 
-     form = StockForm
-     context = {'form': form}
-     return render(request, 'home.html', context)
+    form = StockForm
+    context = {'form': form}
+    return render(request, 'home.html', context)
