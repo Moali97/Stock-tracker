@@ -12,8 +12,8 @@ headers = {
 def home(request):
     url = 'https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-profile'
 
-     querystring = {"symbol": "AAPL", "region": "US"}
-     response = requests.request("GET", url, headers=headers, params=querystring)
+    querystring = {'symbol': 'AAPL'}
+    response = requests.get(url, headers=headers, params=querystring).json()
 
      print(response.text)
 
