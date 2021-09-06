@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .forms import StockForm
 import requests
-from .models import StockList
+
 
 headers = {
     'x-rapidapi-host': "apidojo-yahoo-finance-v1.p.rapidapi.com",
