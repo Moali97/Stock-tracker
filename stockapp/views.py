@@ -17,10 +17,11 @@ def home(request):
 
 
     stock_data = {
-        'name' : querystring,
-        'price' : response['price']['regularMarketOpen'],
+        'name': querystring,
+        'price': response['price']['regularMarketOpen'],
     }
 
     form = StockForm
-    context = {'form': form}
+    # context has form and dictionary
+    context = {'form': form, 'stock_data': stock_data}
     return render(request, 'home.html', context)
