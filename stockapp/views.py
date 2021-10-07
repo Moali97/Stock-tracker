@@ -12,6 +12,7 @@ headers = {
 
 def home(request):
     url = 'https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-profile'
+    # change 'symbol' to 'q' like in yahoo docs, then put 'q={}' in url above
     querystring = {'symbol': 'TSLA'}
     # querying database
     allstocks = StockList.objects.all()
