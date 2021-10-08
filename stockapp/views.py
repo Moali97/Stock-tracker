@@ -22,11 +22,14 @@ def home(request):
     querystring = {'symbol': 'AAPL'}
     response = requests.get(url, headers=headers, params=querystring).json()
 
+        # dictionary of information to be displayed on templates
+        stock = {
+            'name': querystring,
+            'price': response['price']['regularMarketOpen'],
+        }
+        stock_data.append(stock)
 
-    stock_data = {
-        'name': querystring,
-        'price': response['price']['regularMarketOpen'],
-    }
+    print(stock_data)
 
     form = StockForm
 
